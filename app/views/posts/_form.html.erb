@@ -1,0 +1,23 @@
+<%= form_for(post) do |f| %>
+
+  <%= f.hidden_field :daum_id, value: params[:cafe_id] %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :contents %>
+    <%= f.text_area :contents, class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_path %>
+    <%= f.file_field :image_path, class: 'form-control'%>
+  </div>
+   <br><br> 
+  <div class="actions text-right">
+    <%= f.submit '작성하기',class: 'btn btn-info'%>
+    <%= link_to '뒤로가기', posts_path,class: 'btn btn-warning text-white' %>
+  </div>
+<% end %>
